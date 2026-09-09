@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div>
+        <h1>Casino Game Viewer</h1>
+        <p>Game information from 2026</p>
+      </div>
+    </div>
+    <div class="status" id="status"></div>
+    <div class="main-layout">
+      <div class="left-panel">
+        <div class="filters">
+          <div class="filter-group"><label for="weekSelect">Week</label><select id="weekSelect"><option value="">Select Week</option></select></div>
+          <div class="filter-group"><label for="dateSelect">Date</label><select id="dateSelect" disabled><option value="">Select Date</option></select></div>
+          <div class="filter-group"><label for="clusterSelect">Cluster</label><select id="clusterSelect" disabled><option value="">Select Cluster</option></select></div>
+          <div class="filter-group"><label for="gameSelect">Game</label><select id="gameSelect" disabled><option value="">Select Game</option></select></div>
+        </div>
+        <div id="details" class="details" style="display:none;">
+          <div class="game-title">
+            <div class="game-title-main">
+              <h2 id="selectedGame"></h2>
+              <div class="game-subtitle"><span id="selectedStudio"></span><span id="selectedType"></span></div>
+            </div>
+            <div class="game-meta">
+              <div class="game-meta-item"><div class="game-meta-label">Game ID</div><div id="selectedGameId" class="game-meta-value"></div></div>
+              <div class="game-meta-item"><div class="game-meta-label">Release Notes</div><div id="selectedReleaseNotes" class="game-meta-value"></div></div>
+              <div class="game-meta-item"><div class="game-meta-label">Tag</div><div id="selectedTag" class="game-meta-value"></div></div>
+              <div class="game-meta-item"><div class="game-meta-label">Slug</div><div id="selectedSlug" class="game-meta-value"></div></div>
+            </div>
+          </div>
+          <div class="available-section"><h3>Available On</h3><div id="availableBrands" class="brand-list"></div></div>
+          <div class="features-section"><h3>Features</h3><div id="gameFeatures" class="feature-list"></div></div>
+          <div id="futureDataSection" class="future-data-section"></div>
+        </div>
+      </div>
+      <div id="gameDisplaySection" class="game-display-section" style="display:none;">
+        <div class="game-list-title"><div><h3>Games</h3><span class="game-list-subtitle">Games available for the selected date and cluster</span></div></div>
+        <div class="game-display-header"><div>Game Working</div><div>Progress</div><div>Position</div><div>Game Name</div></div>
+        <div id="gameDisplayList" class="game-display-list"></div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
